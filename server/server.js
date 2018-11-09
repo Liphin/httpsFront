@@ -54,8 +54,8 @@ var credentials = {key: privateKey, cert: certificate};
 
 //如果部署到生产环境则用https协议打开端口，否则直接使用http协议端口
 if(global.env=='prod'){
-    https.createServer(credentials, app).listen(PORT); //开启http设置s配置
-    //http.createServer(app).listen(PORT); //开启http设置配置
+    https.createServer(credentials, app).listen(443); //开启http设置默认端口
+    http.createServer(app).listen(PORT); //开启http设置配置
 }else {
     app.listen(PORT);
 }
