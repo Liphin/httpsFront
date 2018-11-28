@@ -6,6 +6,7 @@ global.env = process.env.TARGET_ENV;
 if (env == undefined || env == '' || env == null) {
     global.env = 'dev';
 }
+var url = require('url');
 var fs = require('fs');
 var http = require('http');
 var https = require('https');
